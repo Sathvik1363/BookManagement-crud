@@ -1,5 +1,8 @@
+import * as dotenv from 'dotenv'
+dotenv.config();
 import express from 'express'
-import { PORT , mongourl } from './congig.js';
+
+// import { PORT , mongourl } from './congig.js';
 import mongoose from 'mongoose';
 import bookRoute from './routes/bookRoutes.js'
 import cors from 'cors'
@@ -18,12 +21,12 @@ app.get('/', async (req,res)=>{
 })  
 
 app.use('/books', bookRoute);
-
-mongoose.connect(mongourl)
+let port = process.env.PORT;
+mongoose.connect(process.env.MONGODB_URI)
     .then(()=>{
         console.log("server connected to Database");
-        app.listen( PORT , ()=>{
-            console.log(`server running at port :${PORT}`);
+        app.listen( port , ()=>{
+            console.log(`server running at port :${port}`);
         });
         
 
