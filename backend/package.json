@@ -4,7 +4,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
+    "dev": " export PATH=/opt/render/project/src/server/node_modules/.bin:$PATH && npm start.",
     "build": "npm i"
   },
   "keywords": [],
