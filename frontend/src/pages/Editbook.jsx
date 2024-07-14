@@ -15,7 +15,10 @@ const Editbook = () => {
   const {enqueueSnackbar} = useSnackbar();
   useEffect(()=>{
     setLoading(true);
-    axios.get(`http://localhost:1333/books/${id}`)
+    axios.get(
+      // `http://localhost:1333/books/${id}`
+      `https://bookmanagement-back.onrender.com/books/${id}`
+    )
     .then((response)=>{
       setAuthor(response.data.author);
       setPrice(response.data.price);
