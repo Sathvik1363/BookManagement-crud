@@ -17,7 +17,7 @@ const Editbook = () => {
     setLoading(true);
     axios.get(
       // `http://localhost:1333/books/${id}`
-      `https://bookmanagement-back.onrender.com/books/${id}`
+      `https://bookmanagement-back.onrender.com\books\${id}`
     )
     .then((response)=>{
       setAuthor(response.data.author);
